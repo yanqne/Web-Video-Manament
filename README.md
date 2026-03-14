@@ -46,75 +46,44 @@ Dự án được xây dựng theo mô hình **MVC (Model - View - Controller)**
 
 ---
 
-## Cấu trúc dự án (tham khảo)
+## Cấu trúc dự án
 
 ```
-video-management/
+WebVideoManament/
 │
-├── src/
-│   ├── controller/     # Các Servlet xử lý request
-│   ├── model/          # Entity và Model
-│   ├── dao/            # Lớp truy cập dữ liệu
-│   └── util/           # Cấu hình Hibernate
+├── Web Pages (webcontent)/
+│   ├── Images/        # Chứa hình ảnh của website
+│   ├── META-INF/      # Cấu hình metadata của ứng dụng
+│   ├── WEB-INF/       # Chứa web.xml và các cấu hình bảo mật
+│   ├── admin/         # Giao diện dành cho quản trị viên
+│   ├── common/        # Các thành phần giao diện dùng chung (header, footer,...)
+│   └── site/          # Giao diện dành cho người dùng
 │
-├── webapp/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   └── views/          # Các trang giao diện
+├── Source Packages/
+│   ├── admin.servlet/ # Các Servlet xử lý chức năng quản trị
+│   ├── site.servlet/  # Các Servlet xử lý chức năng phía người dùng
+│   ├── dao/           # Data Access Object - xử lý truy vấn database
+│   ├── domain/        # Các lớp entity/domain của hệ thống
+│   ├── model/         # Các model sử dụng trong ứng dụng
+│   ├── common/        # Các lớp tiện ích dùng chung
+│   └── filter/        # Filter xử lý request (authentication, authorization,...)
 │
-└── WEB-INF/
-    └── web.xml
+├── Test Packages/     # Các package phục vụ cho testing
+│
+└── Dependencies/
+    └── Các thư viện sử dụng trong dự án (Hibernate, MySQL Connector, ...)
 ```
 
 ---
 
-## Cơ sở dữ liệu
 
-Hệ thống sử dụng **MySQL** để lưu trữ dữ liệu.
-
-Các bảng dữ liệu chính:
-
-- `users` – lưu thông tin người dùng
-- `videos` – lưu thông tin video
-- `likes` – lưu thông tin lượt thích
-- `votes` – lưu thông tin bình chọn
-
----
-
-## Hướng dẫn cài đặt
-
-### 1. Clone dự án
+## Clone dự án
 
 ```
-git clone https://github.com/your-username/video-management.git
-```
-
-### 2. Cấu hình database
-
-Tạo database trong MySQL:
+git clone https://github.com/yanqne/Web-Video-Manament.git
 
 ```
-CREATE DATABASE video_management;
-```
 
-Sau đó cập nhật thông tin kết nối database trong file cấu hình Hibernate.
-
----
-
-### 3. Chạy dự án
-
-1. Import dự án vào **IntelliJ IDEA / Eclipse / NetBeans**
-2. Cấu hình **Apache Tomcat**
-3. Build và chạy project trên server
-
-Truy cập hệ thống tại:
-
-```
-http://localhost:8080/video-management
-```
-
----
 
 ## Mục tiêu dự án
 
